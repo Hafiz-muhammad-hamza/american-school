@@ -1,0 +1,346 @@
+.stats-section {
+    width: 100%;
+    padding: 85px 7%;
+    background: #ffffff;
+}
+
+.stats-container {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.stats-box {
+    position: relative;
+    padding: 45px 25px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #edf0f5;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(30, 50, 90, 0.06);
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
+}
+
+.stats-section.show .stats-box {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.students-box {
+    transition-delay: 0.1s;
+}
+
+.teachers-box {
+    transition-delay: 0.25s;
+}
+
+.branches-box {
+    transition-delay: 0.4s;
+}
+
+.students-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4361ee, transparent);
+    transition: height 0.4s ease;
+}
+
+.teachers-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #08a88a, transparent);
+    transition: height 0.4s ease;
+}
+
+.branches-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #f39c12, transparent);
+    transition: height 0.4s ease;
+}
+
+.stats-box:hover::before {
+    height: 8px;
+}
+
+.students-box::after,
+.teachers-box::after,
+.branches-box::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.students-box::after {
+    background: #4361ee;
+}
+
+.teachers-box::after {
+    background: #08a88a;
+}
+
+.branches-box::after {
+    background: #f39c12;
+}
+
+.stats-box:hover::after {
+    width: 65%;
+}
+
+.students-box:hover {
+    transform: translateY(-12px) scale(1.025);
+    border-color: #4361ee;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+}
+
+.teachers-box:hover {
+    transform: translateY(-12px) scale(1.025);
+    border-color: #08a88a;
+    box-shadow: 0 20px 40px rgba(8, 168, 138, 0.15);
+}
+
+.branches-box:hover {
+    transform: translateY(-12px) scale(1.025);
+    border-color: #f39c12;
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.15);
+}
+
+.stats-icon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    font-size: 34px;
+    transition: all 0.5s ease;
+}
+
+.students-box .stats-icon {
+    background: #eef1ff;
+    color: #4361ee;
+}
+
+.teachers-box .stats-icon {
+    background: #e6faf4;
+    color: #08a88a;
+}
+
+.branches-box .stats-icon {
+    background: #fff5df;
+    color: #f39c12;
+}
+
+.students-box:hover .stats-icon {
+    background: #4361ee;
+    color: #ffffff;
+    transform: rotate(-8deg) scale(1.1);
+    border-radius: 50%;
+}
+
+.teachers-box:hover .stats-icon {
+    background: #08a88a;
+    color: #ffffff;
+    transform: rotate(-8deg) scale(1.1);
+    border-radius: 50%;
+}
+
+.branches-box:hover .stats-icon {
+    background: #f39c12;
+    color: #ffffff;
+    transform: rotate(-8deg) scale(1.1);
+    border-radius: 50%;
+}
+
+.stats-box h2 {
+    margin: 0 0 8px;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #172554;
+    transition: all 0.4s ease;
+}
+
+.students-box:hover h2 {
+    color: #4361ee;
+    transform: scale(1.08);
+}
+
+.teachers-box:hover h2 {
+    color: #08a88a;
+    transform: scale(1.08);
+}
+
+.branches-box:hover h2 {
+    color: #f39c12;
+    transform: scale(1.08);
+}
+
+.stats-box p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: #778197;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.stats-box:hover p {
+    color: #374151;
+}
+
+/* ============== DARK MODE ============== */
+
+body.dark-mode .stats-section {
+    background: linear-gradient(135deg, #080d1c, #111a32, #151d38);
+}
+
+body.dark-mode .stats-box {
+    background: linear-gradient(145deg, #17223b, #10182d);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .students-box:hover {
+    border-color: #6366f1;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+body.dark-mode .teachers-box:hover {
+    border-color: #10b981;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+}
+
+body.dark-mode .branches-box:hover {
+    border-color: #f59e0b;
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+}
+
+body.dark-mode .students-box .stats-icon {
+    background: rgba(67, 97, 238, 0.18);
+    color: #818cf8;
+}
+
+body.dark-mode .teachers-box .stats-icon {
+    background: rgba(8, 168, 138, 0.18);
+    color: #34d399;
+}
+
+body.dark-mode .branches-box .stats-icon {
+    background: rgba(243, 156, 18, 0.18);
+    color: #fbbf24;
+}
+
+body.dark-mode .students-box:hover .stats-icon {
+    background: #4361ee;
+    color: #ffffff;
+}
+
+body.dark-mode .teachers-box:hover .stats-icon {
+    background: #08a88a;
+    color: #ffffff;
+}
+
+body.dark-mode .branches-box:hover .stats-icon {
+    background: #f39c12;
+    color: #ffffff;
+}
+
+body.dark-mode .stats-box h2 {
+    color: #f8fafc;
+}
+
+body.dark-mode .students-box:hover h2 {
+    color: #818cf8;
+}
+
+body.dark-mode .teachers-box:hover h2 {
+    color: #34d399;
+}
+
+body.dark-mode .branches-box:hover h2 {
+    color: #fbbf24;
+}
+
+body.dark-mode .stats-box p {
+    color: #aebbd0;
+}
+
+body.dark-mode .stats-box:hover p {
+    color: #ffffff;
+}
+
+/* ============== Responsive ============== */
+
+@media (max-width: 900px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .stats-section {
+        padding: 55px 6%;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .stats-box {
+        padding: 38px 20px;
+    }
+
+    .stats-box h2 {
+        font-size: 36px;
+    }
+
+    .stats-icon {
+        width: 72px;
+        height: 72px;
+        font-size: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .stats-box {
+        opacity: 1;
+        transform: none;
+        animation: none;
+        transition: none;
+    }
+
+    .stats-box:hover,
+    .stats-box:hover .stats-icon,
+    .stats-box:hover h2 {
+        transform: none;
+    }
+}

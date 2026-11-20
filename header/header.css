@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef3ff;
+}
+
+/* =============== Header Section ================ */
+
+.header {
+    width: 100%;
+    min-height: 95px;
+    padding: 12px 5%;
+    background-color: #010A3B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-section img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.school-name h1 {
+    color: #ffffff;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.school-name p {
+    color: #2dd4bf;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-buttons a {
+    text-decoration: none;
+}
+
+.connect-btn {
+    background: linear-gradient(135deg, #14b8a6, #06b6d4);
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.connect-btn i {
+    display: inline-block;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.connect-btn:hover i {
+    transform: translateX(5px) scale(1.2);
+}
+
+.connect-btn:hover {
+    background: linear-gradient(135deg, #0d9488, #0891b2);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.45);
+}
+
+.login-btn,
+.signup-btn {
+    color: #ffffff;
+    padding: 12px 16px;
+    border: 1px solid #2dd4bf90;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-btn i,
+.signup-btn i {
+    display: inline-block;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+.login-btn:hover i,
+.signup-btn:hover i {
+    transform: scale(1.3);
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    background: #2dd4bf;
+    border-color: #2dd4bf;
+    color: #010A3B;
+}
+
+.theme-toggle {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eef3ff, #dbeafe);
+    color: #1e3a8a;
+    border: 2px solid #dbeafe;
+    border-radius: 14px;
+    font-size: 21px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.theme-toggle i {
+    transition: all 0.5s ease;
+}
+
+.theme-toggle:hover {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    border-color: #2563eb;
+    transform: translateY(-5px) rotate(8deg);
+}
+
+.theme-toggle:hover i {
+    transform: rotate(25deg) scale(1.15);
+}
+
+.theme-toggle:active {
+    transform: scale(0.90);
+}
+
+/* ================= Navbar Section =================== */
+
+.navbar {
+    width: 100%;
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+    box-shadow: 0 3px 10px rgba(30, 58, 138, 0.3);
+    position: relative;
+    z-index: 7;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-menu a,
+.nav-dropdown summary {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 15px 5px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-dropdown summary:hover {
+    color: #fde047;
+}
+
+.nav-menu a:focus-visible,
+.nav-dropdown summary:focus-visible,
+.more-menu:focus-visible {
+    outline: 2px solid #fde047;
+    outline-offset: 2px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 210px;
+    background: #ffffff;
+    list-style: none;
+    padding: 8px 0;
+    border-top: 3px solid #14b8a6;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: all 0.35s ease;
+}
+
+.nav-dropdown[open] .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.nav-dropdown summary {
+    list-style: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-dropdown summary i {
+    display: inline-block;
+    font-size: 11px;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown[open] summary i {
+    transform: rotate(180deg);
+}
+
+.dropdown li a {
+    color: #1e3a8a;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown li a:hover {
+    background: #e6fffb;
+    color: #0d9488;
+    padding-left: 25px;
+}
+
+.nav-menu>li>a,
+.more-options>li>a,
+.nav-dropdown summary {
+    position: relative;
+}
+
+.nav-menu>li>a::after,
+.more-options>li>a::after,
+.nav-dropdown summary::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #fde047;
+    left: 0;
+    bottom: 5px;
+    transition: width 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-menu>li>a:hover::after,
+.more-options>li>a:hover::after,
+.nav-dropdown[open] summary::after,
+.nav-dropdown summary:hover::after {
+    width: 100%;
+}
+
+.more-menu {
+    display: none;
+    background: #14b8a6;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 13px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.more-menu-container {
+    display: contents;
+}
+
+.more-options {
+    display: contents;
+}
+
+/* =============== Media ================= */
+
+@media (max-width: 1024px) {
+
+    .school-name h1 {
+        font-size: 18px;
+    }
+
+    .header-buttons {
+        gap: 10px;
+    }
+
+    .connect-btn,
+    .login-btn,
+    .signup-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 4%;
+    }
+
+    .header-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 6px 18px;
+        padding: 5px 10px;
+    }
+
+    .nav-menu a,
+    .nav-dropdown summary {
+        padding: 12px 4px;
+        font-size: 14px;
+    }
+
+    .dropdown {
+        left: 50%;
+        transform: translateX(-50%) translateY(12px);
+    }
+
+    .nav-dropdown[open] .dropdown {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@media (max-width: 550px) {
+
+    .header-buttons {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        align-items: center;
+        gap: 10px;
+    }
+
+    .connect-btn {
+        grid-column: auto;
+    }
+
+    .theme-toggle {
+        grid-column: auto;
+    }
+
+    .login-btn {
+        grid-column: auto;
+    }
+
+    .signup-btn {
+        grid-column: auto;
+    }
+
+    .theme-toggle {
+        height: 40px;
+        width: 40px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-around;
+        gap: 4px;
+        padding: 0 8px;
+    }
+
+    .nav-menu>li {
+        position: relative;
+        text-align: center;
+        border: none;
+    }
+
+    .nav-menu>li>a,
+    .nav-menu>li>details>summary {
+        padding: 15px 5px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .more-menu-container {
+        display: block;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .more-menu {
+        display: block;
+    }
+
+    .more-options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 190px;
+        background: #1e3a8a;
+        list-style: none;
+        padding: 6px 10px;
+        border-top: 3px solid #14b8a6;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        z-index: 1000;
+    }
+
+    .more-menu-container.active .more-options {
+        display: block;
+    }
+
+    .more-options>li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: left;
+    }
+
+    .more-options>li:last-child {
+        border-bottom: none;
+    }
+
+    .more-options>li>a,
+    .more-options>li>details>summary {
+        display: block;
+        width: 100%;
+        padding: 12px 8px;
+        font-size: 13px;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .more-options .dropdown {
+        position: static;
+        min-width: 100%;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        left: auto;
+        background: #f0f6ff;
+        box-shadow: none;
+        border-radius: 5px;
+        border-top: 2px solid #14b8a6;
+        padding: 4px 0;
+    }
+
+    .more-options .nav-dropdown[open]>.dropdown {
+        display: block;
+        transform: none;
+        left: auto;
+    }
+
+    .more-options .dropdown li a {
+        color: #1e3a8a;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .nav-menu>li:nth-child(2) .dropdown {
+        left: 0;
+        transform: translateY(12px);
+    }
+
+    .nav-menu>li:nth-child(2) .nav-dropdown[open]>.dropdown {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-menu>li>a::after,
+    .more-options>li>a::after,
+    .nav-dropdown summary::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .theme-toggle {
+        height: 40px;
+        width: 40px;
+    }
+
+    .logo-section img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .school-name h1 {
+        font-size: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .school-name p {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .header-buttons {
+        width: 100%;
+    }
+
+    .connect-btn,
+    .login-btn,
+    .signup-btn {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 3px;
+    }
+
+    .nav-menu>li {
+        border: none;
+    }
+
+    .nav-menu>li>a,
+    .nav-menu>li>details>summary {
+        padding: 13px 3px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 410px) {
+
+    .connect-btn i,
+    .login-btn i,
+    .signup-btn i {
+        display: none;
+    }
+
+    .connect-btn,
+    .login-btn,
+    .signup-btn {
+        font-size: 10px;
+    }
+
+    .theme-toggle{
+        height: 37px;
+        width: 37px;
+    }
+    .nav-menu {
+        gap: 1px;
+        padding: 0 4px;
+    }
+
+    .nav-menu>li>a,
+    .nav-menu>li>details>summary {
+        font-size: 11px;
+        padding: 13px 2px;
+    }
+
+    .more-menu {
+        padding: 8px 10px;
+        font-size: 17px;
+    }
+
+    .more-options {
+        width: 180px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .nav-menu>li>a,
+    .nav-menu>li>details>summary {
+        font-size: 10px;
+        padding: 12px 1px;
+    }
+
+    .more-menu {
+        padding: 7px 9px;
+        font-size: 16px;
+    }
+
+    .more-options {
+        width: 170px;
+    }
+
+    .school-name h1 {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

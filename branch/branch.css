@@ -1,0 +1,312 @@
+.branch-section {
+    width: 100%;
+    padding: 90px 7%;
+    background: linear-gradient(rgba(5, 20, 55, 0.85), rgba(5, 20, 55, 0.85)), url("./branch2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.branch-container {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.branch-content {
+    flex: 1;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1.2s ease;
+}
+
+.branch-tag {
+    display: inline-block;
+    padding: 9px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffd43b;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.4s ease;
+}
+
+.branch-tag:hover {
+    background: #ffd43b;
+    color: #071b49;
+    transform: translateY(-4px);
+}
+
+.branch-content h2 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin: 25px 0 20px;
+    font-weight: 800;
+}
+
+.branch-content h2 span {
+    color: #ffd43b;
+    display: block;
+}
+
+.branch-content p {
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e7ff;
+    margin-bottom: 30px;
+}
+
+.branch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 27px;
+    background: #ffd43b;
+    color: #071b49;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(255, 212, 59, 0.25);
+}
+
+.branch-btn:hover {
+    background: white;
+    color: #071b49;
+    transform: translateY(-7px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(255, 212, 59, 0.5);
+}
+
+.branch-image {
+    flex: 1;
+    position: relative;
+    max-width: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1.2s ease;
+}
+
+.branch-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease;
+}
+
+.branch-image:hover img {
+    transform: scale(1.07);
+}
+
+.branch-image-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 18px;
+    background: rgba(5, 20, 55, 0.85);
+    border-left: 5px solid #ffd43b;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+.branch-image:hover .branch-image-text {
+    transform: translateY(-8px);
+    background: rgba(5, 20, 55, 0.95);
+}
+
+.branch-image-text h3 {
+    color: white;
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+.branch-section.show .branch-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.branch-section.show .branch-image {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============== DARK MODE ============== */
+
+body.dark-mode .branch-section {
+    background:
+        linear-gradient(
+            rgba(2, 6, 23, 0.94),
+            rgba(8, 15, 38, 0.94)
+        ),
+        url("./branch2.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+body.dark-mode .branch-content {
+    color: #f8fafc;
+}
+
+body.dark-mode .branch-tag {
+    background: rgba(251, 191, 36, 0.12);
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.35);
+}
+
+body.dark-mode .branch-tag:hover {
+    background: #fbbf24;
+    color: #111827;
+}
+
+body.dark-mode .branch-content h2 {
+    color: #f8fafc;
+}
+
+body.dark-mode .branch-content h2 span {
+    color: #fbbf24;
+}
+
+body.dark-mode .branch-content p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .branch-btn {
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    color: #111827;
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.2);
+}
+
+body.dark-mode .branch-btn:hover {
+    background: #ffffff;
+    color: #111827;
+    box-shadow: 0 15px 35px rgba(251, 191, 36, 0.3);
+}
+
+body.dark-mode .branch-image img {
+    border-color: rgba(251, 191, 36, 0.65);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .branch-image-text {
+    background: rgba(2, 6, 23, 0.94);
+    border-left-color: #fbbf24;
+}
+
+body.dark-mode .branch-image:hover .branch-image-text {
+    background: rgba(2, 6, 23, 0.98);
+}
+
+body.dark-mode .branch-image-text h3 {
+    color: #f8fafc;
+}
+
+/* ============== Responsive Design ============== */
+
+@media (max-width: 900px) {
+
+    .branch-container {
+        gap: 35px;
+    }
+
+    .branch-content h2 {
+        font-size: 42px;
+    }
+
+    .branch-image img {
+        height: 330px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .branch-section {
+        padding: 60px 6%;
+    }
+
+    .branch-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .branch-content h2 {
+        font-size: 40px;
+    }
+
+    .branch-content p {
+        font-size: 15px;
+    }
+
+    .branch-btn {
+        padding: 14px 18px;
+        font-size: 13px;
+    }
+
+    .branch-image {
+        max-width: 100%;
+    }
+
+    .branch-image img {
+        height: 300px;
+    }
+
+    .branch-image-text h3 {
+        font-size: 19px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .branch-content h2 {
+        font-size: 34px;
+    }
+
+    .branch-image img {
+        height: 250px;
+    }
+
+    .branch-image-text {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 12px;
+    }
+
+    .branch-image-text h3 {
+        font-size: 17px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .branch-content,
+    .branch-image {
+        animation: none;
+    }
+
+    .branch-btn,
+    .branch-image img,
+    .branch-image-text,
+    .branch-tag {
+        transition: none;
+    }
+
+}

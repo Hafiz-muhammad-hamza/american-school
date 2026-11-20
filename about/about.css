@@ -1,0 +1,238 @@
+.about-section {
+    width: 100%;
+    padding: 80px 7%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 55px;
+    background: #f5f8ff;
+}
+
+.about-image {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 10, 59, 0.15);
+    opacity: 0;
+transform: translateX(-100px);
+transition: all 1.2s ease;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-content {
+    width: 100%;
+    opacity: 0;
+transform: translateX(100px);
+transition: all 1.2s ease;
+}
+
+.about-subtitle {
+    display: inline-block;
+    color: #d49b00;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.about-content h2 {
+    font-size: 42px;
+    color: #010a3b;
+    font-weight: 800;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.about-content h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #ffd400;
+    margin-top: 12px;
+    border-radius: 10px;
+}
+
+.about-content p {
+    color: #555d70;
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.about-content p strong {
+    color: #010a3b;
+    font-weight: 700;
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 15px 32px;
+
+    background: linear-gradient(135deg, #F5E6A8, #D5B653, #A98224);
+    color: #010A3B;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 30px;
+    border: 2px solid #D5B653;
+    box-shadow: 0 8px 20px rgba(169, 130, 36, 0.22);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-btn:hover {
+    background: linear-gradient(135deg, #010A3B, #172B63);
+    color: #F5E6A8;
+    border-color: #D5B653;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(1, 10, 59, 0.25);
+}
+
+.about-btn i {
+    transition: transform 0.3s ease;
+}
+
+.about-btn:hover i {
+    transform: translateX(6px);
+}
+
+.about-section.show .about-image {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-section.show .about-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============== DARK MODE ============== */
+
+body.dark-mode .about-section {
+    background: linear-gradient(135deg, #080d1c, #151b38, #10172e);
+}
+
+body.dark-mode .about-image {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .about-content h2 {
+    color: #f8fafc;
+}
+
+body.dark-mode .about-content p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .about-content p strong {
+    color: #ffffff;
+}
+
+body.dark-mode .about-subtitle {
+    color: #fbbf24;
+}
+
+body.dark-mode .about-content h2::after {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+body.dark-mode .about-btn {
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    color: #111827;
+    border-color: #fbbf24;
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.2);
+}
+
+body.dark-mode .about-btn:hover {
+    background: linear-gradient(135deg, #312e81, #1e40af);
+    color: #ffffff;
+    border-color: #818cf8;
+    box-shadow: 0 12px 28px rgba(99, 102, 241, 0.3);
+}
+
+/* ============== Responsive ============== */
+
+@media (max-width: 992px) {
+
+    .about-section {
+        padding: 65px 5%;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-image {
+        height: 550px;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .about-section {
+        grid-template-columns: 1fr;
+        padding: 50px 6%;
+        gap: 35px;
+    }
+
+    .about-image {
+        height: 550px;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .about-section {
+        padding: 40px 5%;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    .about-content h2 {
+        font-size: 29px;
+    }
+
+    .about-subtitle {
+        font-size: 12px;
+    }
+
+    .about-btn {
+        padding: 12px 23px;
+        font-size: 14px;
+    }
+}
